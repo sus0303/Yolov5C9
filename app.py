@@ -6,7 +6,7 @@ import pandas as pd
 import torch
 
 st.set_page_config(
-    page_title="Detección de Objetos en Tiempo Real",
+    page_title="Detección de Objetos en Tiempo Real!!!",
     page_icon="🔍",
     layout="wide"
 )
@@ -22,7 +22,7 @@ def load_model():
         return None
 
 st.title("🔍 Detección de Objetos en Imágenes")
-st.markdown("Esta aplicación utiliza YOLOv5 para detectar objetos en imágenes capturadas con tu cámara.")
+st.markdown("Esta aplicación utiliza YOLOv5 para detectar objetos en las imágenes que captures con tu cámara.")
 
 with st.spinner("Cargando modelo YOLOv5..."):
     model = load_model()
@@ -35,7 +35,7 @@ if model:
         iou_threshold  = st.slider("Umbral IoU", 0.0, 1.0, 0.45, 0.01)
         max_det        = st.number_input("Detecciones máximas", 10, 2000, 1000, 10)
 
-    picture = st.camera_input("Capturar imagen", key="camera")
+    picture = st.camera_input("Toma una foto, subela y listo!", key="camera")
 
     if picture:
         bytes_data = picture.getvalue()
